@@ -1,0 +1,107 @@
+    @font-face {
+    font-family: gameFont;
+    src: url(./gameFont/Kid_Games_400.ttf);
+    }
+    ::selection {
+  color: rgb(247, 235, 235);
+  
+}
+    html,
+            body {
+                
+                outline: none !important;
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+                -webkit-tap-highlight-color: transparent;
+                margin: 0px;
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bold;
+                font-size: 22px;
+            }
+
+            canvas {
+                display: block;
+            }
+    .node1{
+        position: absolute;left: 303px;top: 267px;width: 250px;height: 70px;
+    }
+    
+         .shape {background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%)}
+         .shape {
+             cursor: grab;
+            text-align: center;
+            height: 70px;
+            width: 250px;
+            text-transform: uppercase;
+            transition: 0.5s;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .shape:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+         
+    .node2{
+        cursor: grab;
+
+            shape-outside: polygon(100% 100%, 0% 100%, 0% 0%, 68% 0%, 74% 15%, 70% 50%);
+
+        position: absolute;left: 303px;top: 350px;width: 250px;height: 70px;
+        
+    }
+    .node3{
+        cursor: grab;
+
+        position: absolute;left: 303px;top: 433px;width: 250px;height: 70px;
+    }
+    .node4{
+        cursor: grab;
+
+        position: absolute;left: 303px;top: 516px;width: 250px;height: 70px;
+    }
+    .node5{
+        cursor: grab;
+
+        position: absolute;left: 303px;top: 599px;width: 250px;height: 70px;
+    }
+
+    .goal1{
+        position: absolute;left: 920px;top: 270px;width: 250px;height: 70px;z-index: -1;
+    }
+    .goal2{
+        position: absolute;left: 60%;top: 350px;width: 250px;height: 70px;z-index: -1;
+    }
+    .goal3{
+        position: absolute;left: 60%;top: 433px;width: 250px;height: 70px;z-index: -1;
+    }
+    .goal4{
+        position: absolute;left: 60%;top: 516px;width: 250px;height: 70px;z-index: -1;
+    }
+    .goal5{
+        position: absolute;left: 60%;top: 599px;width: 250px;height: 70px;z-index: -1;
+    }
+    .body{
+        background-image: url('./game.jpg'); background-size: cover; background-repeat: no-repeat;
+    }
+
+    .firstImg{
+        border-radius: 50%;position: absolute;top: 275px;left: 58%;z-index: -1;
+    }
+    .secondImg{
+        border-radius: 50%;position: absolute;top: 360px;left: 58%;z-index: -1;
+    }
+    .thirdImg{
+        border-radius: 50%;position: absolute;top: 442px;left: 58%;z-index: -1;
+    }
+    .forthImg{
+        border-radius: 50%;position: absolute;top: 525px;left: 58%;z-index: -1;
+    }
+    .fifthImg{
+        border-radius: 50%;position: absolute;top: 610px;left: 58%;z-index: -1;
+    }
+
+    

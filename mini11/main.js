@@ -14,7 +14,6 @@ window.onload = function() {
 
 	function draw() {
 		context.clearRect(0, 0, width, height);
-
 		context.fillStyle = "gray";
 		context.beginPath();
 		context.arc(handle.x, handle.y, handle.radius, 0, Math.PI * 2, false);

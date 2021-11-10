@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Game4Fun</title>
+	<link rel="icon" href="./gametitle.jpg" type="image/x-icon"/>
+	<script type="text/javascript" src="vector.js"></script>
+	<script type="text/javascript" src="particle.js"></script>
+	<script type="text/javascript" src="utils.js"></script>
+	<script type="text/javascript" src="spring1.js"></script>
+	<link rel="stylesheet" href="index.css">
+</head>
+
+<body class="body">
+	<div onclick="nextLevel()" style="position: absolute;left: 1200px;top: 670px;display: flex;cursor: pointer;">
+		<img style="border-radius: 50%;" src="./nextLevel.jpg" />
+		<p style="color: aliceblue;margin-left: 20px;">Next <br /> Level</p>
+	</div>
+	<img class="firstImg" src='./preez.jpg' />
+	<img class="secondImg" src='./preez.jpg' />
+	<img class="thirdImg" src='./preez.jpg' />
+	<img class="forthImg" src='./preez.jpg' />
+	<img class="fifthImg" src='./preez.jpg' />
+
+	<img id="scream" style="position: absolute;top: 267px;left: 35%;width: 60px !important;display: none;height: 20px;" src='./plug.svg' />
+
+
+	<div id="arena" style="position: relative;left: 0%;top:30%;">
+	</div>
+
+
+	<script>
+
+		var array = [
+			{ name: 'Dog', goal: 'كلب' },
+			{ name: 'بقرة', isGoal: true },
+			{ name: 'Cow', goal: 'بقرة' },
+			{ name: 'كلب', isGoal: true },
+			{ name: 'Ant', goal: 'نملة' },
+			{ name: 'نملة', isGoal: true },
+			{ name: 'Cat', goal: 'قطة' },
+			{ name: 'سمكة', isGoal: true },
+			{ name: 'Fish', goal: 'سمكة' },
+			{ name: 'قطة', isGoal: true },
+		];
+		var array3 = [
+			{ name: 'Chicken', goal: 'دجاجة' },
+			{ name: 'فيل', isGoal: true },
+			{ name: 'Bird', goal: 'طائرة' },
+			{ name: 'ثور', isGoal: true },
+			{ name: 'Frog', goal: 'ضفدع' },
+			{ name: 'ضفدع', isGoal: true },
+			{ name: 'Elephant', goal: 'فيل' },
+			{ name: 'دجاجة', isGoal: true },
+			{ name: 'Bull', goal: 'ثور' },
+			{ name: 'طائر', isGoal: true },
+		];
+		var array2 = [
+			{ name: 'Hourse', goal: 'حصان' },
+			{ name: 'فأر', isGoal: true },
+			{ name: 'Duck', goal: 'بطة' },
+			{ name: 'حصان', isGoal: true },
+			{ name: 'Lion', goal: 'أسد' },
+			{ name: 'نمر', isGoal: true },
+			{ name: 'Mouse', goal: 'فأر' },
+			{ name: 'أسد', isGoal: true },
+			{ name: 'Tiger', goal: 'نمر' },
+			{ name: 'بطة', isGoal: true },
+		];
+		var levels = [
+			array,
+			array2,
+			array3
+		];
+		let currentLevel = 0;
+		let nextLevel = () => {
+			currentLevel++;
+			if (currentLevel >= levels.length)
+				currentLevel = 0;
+			let parent = document.getElementById('arena');
+			levels[currentLevel].map((node, index) => {
+				let div;
+				if (!node.isGoal) {
+					div = document.getElementById(`spring${index / 2 + 1}`);
+					div.className = `node${index / 2 + 1}`;
+					div.setAttribute('id', `spring${index / 2 + 1}`)
+
+				} else {
+					div = document.getElementsByClassName(`goal${(index + 1) / 2}`)[0];
+					div.className = `goal${(index + 1) / 2}`;
+					div.style.zIndex = -2;
+				}
+				div.classList.add("shape")
+				div.textContent = node.name
+				div.style.textAlign = "center";
+				div.style.verticalAlign = "middle";
+				div.style.lineHeight = "70px";
+				// parent.appendChild(div);
+			});
+		}
+		let initLevel = () => {
+			let parent = document.getElementById('arena');
+			array.map((node, index) => {
+				let div = document.createElement('div');
+				if (!node.isGoal) {
+					div.className = `node${index / 2 + 1}`;
+					div.setAttribute('id', `spring${index / 2 + 1}`)
+				} else {
+					div.className = `goal${(index + 1) / 2}`;
+					div.style.zIndex = -2;
+				}
+				div.textContent = node.name
+				div.classList.add("shape")
+				div.style.textAlign = "center";
+				div.style.verticalAlign = "middle";
+				div.style.lineHeight = "70px";
+				parent.appendChild(div);
+			});
+		};
+		initLevel();
+	</script>
+	<canvas id="canvas"></canvas>
+
+</body>
+
+</html>

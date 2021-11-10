@@ -46,11 +46,12 @@ var vector = {
 	},
 
 	add: function(v2) {
-		return vector.create(this._x + v2.getX(), this._y + v2.getY());
+		return vector.create(this._x + v2.getX, this._y + v2.getY());
 	},
 
 	subtract: function(v2) {
-		return vector.create(this._x - v2.getX(), this._y - v2.getY());
+		console.log(v2, 'this is ')
+		return vector.create(this._x - v2.getX, this._y - v2.getY);
 	},
 
 	multiply: function(val) {
@@ -62,12 +63,12 @@ var vector = {
 	},
 
 	addTo: function(v2) {
-		this._x += v2.getX();
+		this._x += v2.getX;
 		this._y += v2.getY();
 	},
 
 	subtractFrom: function(v2) {
-		this._x -= v2.getX();
+		this._x -= v2.getX;
 		this._y -= v2.getY();
 	},
 
